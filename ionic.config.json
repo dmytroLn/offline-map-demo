@@ -1,0 +1,7 @@
+{
+  "name": "offline-map-demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
