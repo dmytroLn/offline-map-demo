@@ -39,24 +39,23 @@ import { OfflineMap } from "offline-map";
 
 const App: React.FC = () => {
   useEffect(() => {
-    OfflineMap.initialize({
-      accessToken:
-        "pk.eyJ1IjoiZG15dHJvMTIzNDEyMyIsImEiOiJjbHhrN3RkNGgwMGJ4MmtyM2p1NTZtcTI4In0.C98LiKnQTnerkBbniJaxRw",
-    });
+    const initializeMap = async () => {
+      await OfflineMap.initialize({ accessToken: "your-access-token-here" });
+      await OfflineMap.showMap({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [30.5238, 50.45466], // Київ
+        zoom: 12,
+      });
+    };
+
+    initializeMap();
   }, []);
   return (
     <IonApp>
-      <IonButton
-        onClick={() => {
-          OfflineMap.showMap({
-            latitude: 50.4501,
-            longitude: 30.5234,
-            zoom: 10,
-          });
-        }}
-      >
-        show map
-      </IonButton>
+      <div>
+        <div id="map" style={{ width: "100%", height: "100vh" }}></div>
+      </div>
     </IonApp>
   );
 };
