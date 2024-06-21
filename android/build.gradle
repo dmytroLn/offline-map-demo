@@ -5,19 +5,6 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        maven {
-            url = "https://api.mapbox.com/downloads/v2/releases/maven"
-            authentication {
-            basic(BasicAuthentication)
-        }
-                credentials {
-            // Do not change the username below.
-            // This should always be `mapbox` (not your username).
-            username = 'mapbox'
-            // Use the secret token you stored in gradle.properties as the password
-            password = "sk.eyJ1IjoiZG15dHJvMTIzNDEyMyIsImEiOiJjbHhtMmd3dG4wM3djMmhzZHRhZnc1ZzZpIn0.M2RaPi22pc6CeJ4O5LAk5w"
-        }
-        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.2.1'
@@ -37,15 +24,15 @@ allprojects {
         maven {
             url = "https://api.mapbox.com/downloads/v2/releases/maven"
             authentication {
-            basic(BasicAuthentication)
-        }
-                credentials {
-            // Do not change the username below.
-            // This should always be `mapbox` (not your username).
-            username = 'mapbox'
-            // Use the secret token you stored in gradle.properties as the password
-            password = "sk.eyJ1IjoiZG15dHJvMTIzNDEyMyIsImEiOiJjbHhtMmd3dG4wM3djMmhzZHRhZnc1ZzZpIn0.M2RaPi22pc6CeJ4O5LAk5w"
-        }
+                basic(BasicAuthentication)
+            }
+            credentials {
+                // Do not change the username below.
+                // This should always be `mapbox` (not your username).
+                username = 'mapbox'
+                // Use the secret token you stored in gradle.properties as the password
+                password = "sk.eyJ1IjoiZG15dHJvMTIzNDEyMyIsImEiOiJjbHhtMmd3dG4wM3djMmhzZHRhZnc1ZzZpIn0.M2RaPi22pc6CeJ4O5LAk5w"
+            }
         }
     }
 }
