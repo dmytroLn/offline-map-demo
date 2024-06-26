@@ -55,11 +55,7 @@ const App: React.FC = () => {
     initializeMap();
   }, []);
   return (
-    <IonApp
-      style={{
-        "background-color": "red",
-      }}
-    >
+    <IonApp>
       <div style={{ width: "30%", height: "30vh" }}>
         <div id="map" style={{ width: "100%", height: "100%" }}></div>
       </div>
