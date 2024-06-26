@@ -40,11 +40,14 @@ import { OfflineMap } from "offline-map";
 const App: React.FC = () => {
   useEffect(() => {
     const initializeMap = async () => {
-      await OfflineMap.initialize({ accessToken: "your-access-token-here" });
+      await OfflineMap.initialize({
+        accessToken:
+          "pk.eyJ1IjoiZG15dHJvMTIzNDEyMyIsImEiOiJjbHhrN3RkNGgwMGJ4MmtyM2p1NTZtcTI4In0.C98LiKnQTnerkBbniJaxRw",
+      });
       await OfflineMap.showMap({
         container: "map",
         style: "mapbox://styles/mapbox/streets-v11",
-        center: [30.5238, 50.45466], // Київ
+        center: [30.5238, 50.45466],
         zoom: 12,
       });
     };
@@ -52,9 +55,13 @@ const App: React.FC = () => {
     initializeMap();
   }, []);
   return (
-    <IonApp>
-      <div>
-        <div id="map" style={{ width: "100%", height: "100vh" }}></div>
+    <IonApp
+      style={{
+        "background-color": "red",
+      }}
+    >
+      <div style={{ width: "30%", height: "30vh" }}>
+        <div id="map" style={{ width: "100%", height: "100%" }}></div>
       </div>
     </IonApp>
   );

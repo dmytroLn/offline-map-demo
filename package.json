@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test.e2e": "cypress run",
     "test.unit": "vitest",
-    "lint": "eslint"
+    "lint": "eslint",
+    "dev:android": "yarn add ../offline-map && npx cap sync && ionic capacitor build android"
   },
   "dependencies": {
     "@capacitor/android": "^6.1.0",
